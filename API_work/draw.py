@@ -11,5 +11,5 @@ for z, chunk in enumerate(data):
     draw = ImageDraw.ImageDraw(img)
     for x in range(w):
         for y in range(h):
-            img.putpixel((x, y), (chunk[y][x], chunk[y][x], chunk[y][x]))
+            img.putpixel((x, y), (chunk[h - y - 1][x], chunk[h - y - 1][x], chunk[h - y - 1][x]))
     img.save(f'img{z}.png')
