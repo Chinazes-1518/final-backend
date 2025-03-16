@@ -16,7 +16,7 @@ from API_work import main
 #     yield
 
 
-# main.run()
+main.run()
 
 # app = FastAPI(lifespan=lifespan)
 app = FastAPI()

@@ -25,6 +25,12 @@ async def get() -> JSONResponse:
         return utils.json_responce(json.load(f))
 
 
+@router.get('/get_coords')
+async def get_coords() -> JSONResponse:
+    with open('coords.json', 'r') as f:
+        return utils.json_responce(json.load(f))
+
+
 @router.get('/setlink')
 async def add(link: str) -> JSONResponse:
     main.run(link)
