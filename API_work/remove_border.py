@@ -1,4 +1,5 @@
 import json
+import pathlib
 
 
 def run():
@@ -18,5 +19,5 @@ def run():
     for row in data:
         data2.append(row[3:-3])
 
-    with open('../map.json', 'w') as f:
+    with open(pathlib.Path(__file__).parent.parent.joinpath('map.json'), 'w') as f:
         json.dump(data2, f)
