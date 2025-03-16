@@ -6,7 +6,7 @@ import json
 import database
 import utils
 
-router = APIRouter(prefix='/test')
+router = APIRouter(prefix='/project')
 
 
 @router.get('/get_map')
