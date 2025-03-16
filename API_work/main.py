@@ -1,7 +1,12 @@
-import get_all_pieces
-import merge
-import remove_border
-import get_coords
+from . import get_all_pieces
+from . import merge
+from . import remove_border
+from . import get_coords
+
+# import get_all_pieces
+# import merge
+# import remove_border
+# import get_coords
 
 
 def run(URL='https://olimp.miet.ru/ppo_it/api'):

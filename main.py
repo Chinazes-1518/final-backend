@@ -6,6 +6,8 @@ import database
 import routes
 import utils
 
+from API_work import main
+
 
 # @asynccontextmanager
 # async def lifespan(app: FastAPI):
@@ -13,6 +15,8 @@ import utils
 #     database.MyBase.metadata.create_all(bind=database.engine)
 #     yield
 
+
+# main.run()
 
 # app = FastAPI(lifespan=lifespan)
 app = FastAPI()
