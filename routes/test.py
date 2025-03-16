@@ -2,9 +2,19 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy import select, update, insert, delete
 import json
+import sys
+import pathlib
 
 import database
 import utils
+
+# directory reach
+directory = path.path(__file__).abspath()
+
+# setting path
+sys.path.append(directory.parent.parent)
+
+from API_work import main
 
 router = APIRouter(prefix='/project')
 
@@ -18,11 +28,14 @@ async def get() -> JSONResponse:
         return utils.json_responce(json.load(f))
 
 
-# @router.get('/add')
-# async def add(name: str, age: int) -> JSONResponse:
-#     with database.sessions.begin() as session:
-#         req = session.execute(insert(database.User).values(name=name, age=age))
-#         return utils.json_responce({'z': 'v'})
+@router.get('/setlink')
+async def add(link: str) -> JSONResponse:
+    # with database.sessions.begin() as session:
+    #     req = session.execute(insert(database.User).values(name=name, age=age))
+    #     return utils.json_responce({'z': 'v'})
+    # with open('db.json', 'w') as f:
+    main.run(link)
+    return utils.json_responce({'msg': 'ok'})
 
 
 # @router.get('/delete')
