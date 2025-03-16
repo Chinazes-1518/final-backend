@@ -143,3 +143,14 @@ while running:
 
 print(*mtx, sep='\n')
 
+new_mtx = [[0] * 256 for _ in range(256)]
+
+for i, row in enumerate(mtx):
+    for j, col in enumerate(row):
+        for z in range(64):
+            new_mtx[z + (3 - i) * 64][j * 64:(j + 1) * 64] = data[col][z]
+
+print(*new_mtx, sep='\n')
+
+with open('merged.json', 'w') as f:
+    json.dump(new_mtx, f)
